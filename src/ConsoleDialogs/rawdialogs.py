@@ -4,10 +4,8 @@
 ConsoleDialogs.rawdialogs
 =========================
 
-input/raw_input based dialogs
+raw input based dialogs
 """
-from __future__ import print_function, unicode_literals, division, absolute_import
-
 import functools
 import sys
 import textwrap
@@ -64,31 +62,87 @@ def show_message(text):
     print('-' * width)
 
 
-class MessageDialog(object):
+class RawMessageDialog(object):
     def __init__(self, message):
         self.message = message
 
     @ConsoleIO()
     def show(self):
         show_message(self.message)
-        # raw_input("Hit [Return] to continue!")
 
 
-class PassFailDialog(object):
+class RawPassFailDialog(object):
     def __init__(self, message):
         self.message = message
 
     @ConsoleIO()
     def show(self):
         possible = {
-            'p': False,
-            'f': True
+            'f': False,
+            'p': True
         }
         show_message(self.message)
         while True:
-            result = raw_input('[P]ass or [f]ail? [P]')
+            result = input('[P]ass or [f]ail? [P]')
             result = result.strip().lower()
             result = possible.get(result)
             if isinstance(result, bool):
                 break
         return result
+
+class RawInputDialog(object):
+    def __init__(self, message):
+        self.message = message
+
+    @ConsoleIO()
+    def show(self):
+        show_message(self.message)
+        result = input('> ')
+        return result
+
+class RawSingleSelectionDialog(object):
+    def __init__(self, message, *values):
+        self.message = message
+        self.values = values
+
+    @ConsoleIO()
+    def show(self):
+        lines = [self.message]
+        for i in range(0, len(self.values)):
+            lines.append(str(i+1) + ": " + self.values[i])
+        while True:
+            message = "Select a single item from the option list by entering its number"
+            show_message(message + '\r\n' + '\r\n'.join(lines))
+            result = input('> ')
+            try:
+                intresult = int(result)
+                intresult = intresult - 1
+                if intresult < 0 or intresult >= len(self.values):
+                    raise RuntimeError()
+                return intresult
+            except Exception:
+                print("Invalid selection")
+
+class RawMultiSelectionDialog(object):
+    def __init__(self, message, *values):
+        self.message = message
+        self.values = values
+
+    @ConsoleIO()
+    def show(self):
+        lines = [self.message]
+        for i in range(0, len(self.values)):
+            lines.append(str(i+1) + ": " + self.values[i])
+        while True:
+            message = "Select zero or more items from the option list by entering a comma-separated list of numbers"
+            show_message(message + '\r\n' + '\r\n'.join(lines))
+            result = input('> ')
+            try:
+                result_list = [x.strip() for x in result.split(',')]
+                int_results = [(int(x)-1) for x in result_list]
+                for i in int_results:
+                    if i < 0 or i >= len(self.values):
+                        raise RuntimeError()
+                return [self.values[x] for x in int_results]
+            except Exception:
+                print("Invalid selection")

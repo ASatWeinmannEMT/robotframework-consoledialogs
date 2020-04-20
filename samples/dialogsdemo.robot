@@ -1,5 +1,5 @@
 *** Settings ***
-Library  Dialogs
+Library  ConsoleDialogs
 
 *** Test Cases ***
 Test Manual Step
