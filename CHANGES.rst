@@ -1,6 +1,12 @@
 Changes log
 ===========
 
+1.1.0
+-----
+
+- Forked from glenfant
+- Improvements by tw39124
+
 1.0.0
 -----
 

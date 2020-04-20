@@ -9,7 +9,7 @@ A pure console replacement for the Robot Framework Dialogs library.
 
 from setuptools import setup, find_packages
 
-version = '0.1.0'
+version = '1.1.0'
 
 install_requires = ['setuptools', 'wheel', 'robotframework']
 dev_require = []
@@ -30,7 +30,7 @@ setup(name='robotframework-consoledialogs',
       ],
       keywords='robotframework dialogs console ui',
       author='tw39124-1',
-      url='http://pypi.org/pypi/robotframework-consoledialogs',
+      url='http://github.com/tw39124-1/robotframework-consoledialogs',
       license='MIT',
       packages=find_packages('src'),
       package_dir={'': 'src'},
