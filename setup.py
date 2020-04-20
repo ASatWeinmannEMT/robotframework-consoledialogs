@@ -31,6 +31,7 @@ setup(name='robotframework-consoledialogs',
       keywords='robotframework dialogs console ui',
       author='tw39124-1',
       url='http://github.com/tw39124-1/robotframework-consoledialogs',
+      download_url='https://github.com/tw39124-1/robotframework-consoledialogs/archive/v1.1.0.tar.gz'
       license='MIT',
       packages=find_packages('src'),
       package_dir={'': 'src'},
