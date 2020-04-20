@@ -70,7 +70,7 @@ class CursesDialog(object):
         self.exit = True
 
 
-class CursesMessageDialog(Dialog):
+class CursesMessageDialog(CursesDialog):
     def __init__(self, message):
         self.message = message
 
@@ -86,7 +86,7 @@ class CursesMessageDialog(Dialog):
         scr.addstr(height - 1, int(width * 0.5), "OK", A_REVERSE)
 
 
-class CursesPassFailDialog(Dialog):
+class CursesPassFailDialog(CursesDialog):
     def __init__(self, message):
         self.message = message
         self.result = False
@@ -124,7 +124,7 @@ class CursesPassFailDialog(Dialog):
                 self.selected_button = 1
 
 
-class CursesInputDialog(Dialog):
+class CursesInputDialog(CursesDialog):
     def __init__(self, message, default, hidden=False):
         self.message = message
         self.hidden = hidden

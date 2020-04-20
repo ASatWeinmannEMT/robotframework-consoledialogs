@@ -1,7 +1,7 @@
 Changes log
 ===========
 
-1.1.0
+1.1.x
 -----
 
 - Forked from glenfant

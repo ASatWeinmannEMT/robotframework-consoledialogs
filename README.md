@@ -41,25 +41,6 @@ Usage
        Pause Execution
        Pause Execution  message=Execution stopped. Hit [Return] to continue.
 
-Developer notes
-===============
-
-Please use a virtualenv to maintain this package, but I should not need to say
-that.
-
-Grab the source from the SCM repository:
-
-.. code:: console
-
-   $ python setup.py develop
-   $ easy_install ConsoleDialogs[dev]
-
-Run the tests:
-
-.. code:: console
-
-   $ python setup.py test
-
 Links
 =====
 
