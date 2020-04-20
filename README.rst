@@ -69,8 +69,8 @@ PyPI
 
 Source code
 
-  https://github.com/glenfant/robotframework-consoledialogs
+  https://github.com/tw39124-1/robotframework-consoledialogs
 
 Issues tracker
 
-  https://github.com/glenfant/robotframework-consoledialogs/issues
+  https://github.com/tw39124-1/robotframework-consoledialogs/issues

@@ -28,7 +28,7 @@ setup(name='robotframework-consoledialogs',
           "Environment :: Console :: Curses",
           "Operating System :: OS Independent"
       ],
-      keywords='robotframework dialogs ui',
+      keywords='robotframework dialogs console ui',
       author='tw39124-1',
       url='http://pypi.org/pypi/robotframework-consoledialogs',
       license='MIT',
