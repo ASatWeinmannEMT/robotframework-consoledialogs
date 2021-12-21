@@ -74,7 +74,7 @@ class ConsoleKeywords(object):
         Considering strings ``false`` and ``no`` to be false is new in RF 2.9
         and considering string ``none`` false is new in RF 3.0.3.
         """
-        if curses_available:
+        if False: #curses_available:
             input_dialog = CursesInputDialog(message, default_value, hidden)
             input_dialog.show()
             return input_dialog.get_result()
