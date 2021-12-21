@@ -91,7 +91,7 @@ class RawPassFailDialog(object):
         return result
 
 class RawInputDialog(object):
-    def __init__(self, message):
+    def __init__(self, message, default, hidden):
         self.message = message
 
     @ConsoleIO()
